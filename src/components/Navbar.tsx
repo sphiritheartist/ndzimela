@@ -9,8 +9,9 @@ export default function Navbar() {
 
   const links = [
     { name: "Portfolio", href: "#portfolio" },
-    { name: "Services", href: "#services" },
-    { name: "About", href: "#about" },
+    { name: "Services", href: "/#services" },
+    { name: "About", href: "/#about" },
+    { name: "Contact Us", href: "/contact" },
     { name: "Investor Portal", href: "/login" },
   ];
 

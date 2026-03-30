@@ -1,8 +1,14 @@
 import { ArrowRight, ChevronRight, Building2, TrendingUp, Shield } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
+import { prisma } from "@/lib/prisma";
 
-export default function Home() {
+export default async function Home() {
+  const featuredProperties = await prisma.property.findMany({
+    where: { featured: true },
+    take: 6,
+  });
+
   return (
     <div className="flex flex-col w-full">
       {/* Hero Section */}
@@ -96,18 +102,18 @@ export default function Home() {
           </div>
 
           <div className="flex gap-6 overflow-x-auto pb-8 snap-x snap-mandatory scrollbar-hide">
-            {[1, 2, 3, 4].map((item) => (
-              <div key={item} className="flex-none w-[300px] md:w-[450px] snap-center group cursor-pointer">
+            {featuredProperties.map((property: any) => (
+              <div key={property.id} className="flex-none w-[300px] md:w-[450px] snap-center group cursor-pointer">
                 <div className="relative aspect-[4/5] rounded-3xl overflow-hidden mb-6">
                   <img
-                    src={`https://images.unsplash.com/photo-1574362848149-11496d93a7c7?q=80&w=800&auto=format&fit=crop&sig=${item}`}
-                    alt={`Property ${item}`}
+                    src={property.imageUrl}
+                    alt={property.title}
                     className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-700"
                   />
                   <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-500" />
                 </div>
-                <h3 className="text-xl font-semibold mb-1">The Metropolitan</h3>
-                <p className="text-white/50 text-sm">Sandton Core, Johannesburg</p>
+                <h3 className="text-xl font-semibold mb-1">{property.title}</h3>
+                <p className="text-white/50 text-sm">{property.location}</p>
               </div>
             ))}
           </div>

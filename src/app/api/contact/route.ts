@@ -1,11 +1,19 @@
 import { NextResponse } from "next/server";
+import { prisma } from "@/lib/prisma";
 
 export async function POST(request: Request) {
   try {
     const body = await request.json();
     
-    // In a real application, you would send an email or save to a database here
-    console.log("Contact form payload:", body);
+    await prisma.message.create({
+      data: {
+        name: body.name,
+        email: body.email,
+        company: body.company,
+        phone: body.phone,
+        content: body.content,
+      }
+    });
 
     return NextResponse.json(
       { message: "Thank you for reaching out. A representative will contact you shortly." },
@@ -13,7 +21,7 @@ export async function POST(request: Request) {
     );
   } catch (error) {
     return NextResponse.json(
-      { error: "Invalid request" },
+      { error: "Invalid request. Failed to save message." },
       { status: 400 }
     );
   }
