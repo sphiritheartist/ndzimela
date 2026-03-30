@@ -1,0 +1,132 @@
+﻿
+> site@0.1.0 build
+> next build
+
+Γû▓ Next.js 16.2.1 (Turbopack)
+
+  Creating an optimized production build ...
+node.exe : Error: `@utility` 
+cannot be nested.
+At line:1 char:1
++ & "C:\Program 
+Files\nodejs/node.exe" "C:\Program 
+Files\nodejs/node_mo ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~
+    + CategoryInfo          : NotS 
+   pecified: (Error: `@utility` c  
+  annot be nested.:String) [], R   
+ emoteException
+    + FullyQualifiedErrorId : Nati 
+   veCommandError
+ 
+    [2m[at C:\Users\Admin\Document
+s\Work\Personal\Ciki\site\node_modu
+les\tailwindcss\dist\lib.js:32:3317
+][0m
+    [2m[at _r (C:\Users\Admin\Docu
+ments\Work\Personal\Ciki\site\node_
+modules\tailwindcss\dist\lib.js:3:1
+733)][0m
+    [2m[at I (C:\Users\Admin\Docum
+ents\Work\Personal\Ciki\site\node_m
+odules\tailwindcss\dist\lib.js:3:13
+77)][0m
+    [2m[at mn (C:\Users\Admin\Docu
+ments\Work\Personal\Ciki\site\node_
+modules\tailwindcss\dist\lib.js:32:
+2712)][0m
+    [2m[at async gn (C:\Users\Admi
+n\Documents\Work\Personal\Ciki\site
+\node_modules\tailwindcss\dist\lib.
+js:38:631)][0m
+    [2m[at async Xr (C:\Users\Admi
+n\Documents\Work\Personal\Ciki\site
+\node_modules\@tailwindcss\node\dis
+t\index.js:10:3416)][0m
+    [2m[at async N (C:\Users\Admin
+\Documents\Work\Personal\Ciki\site\
+node_modules\@tailwindcss\postcss\d
+ist\index.js:10:3979)][0m
+    [2m[at async Object.Once (C:\U
+sers\Admin\Documents\Work\Personal\
+Ciki\site\node_modules\@tailwindcss
+\postcss\dist\index.js:10:4251)][0
+m
+    [2mat async 
+LazyResult.runAsync (node_modules/p
+ostcss/lib/lazy-result.js:293:11) [
+C:\Users\Admin\Documents\Work\Perso
+nal\Ciki\site\.next\build\chunks\no
+de_modules_13sb.px._.js:6214:21][0
+m
+    [2mat async transform (turbopa
+ck:///[turbopack-node]/transforms/p
+ostcss.ts:70:34) [C:\Users\Admin\Do
+cuments\Work\Personal\Ciki\site\.ne
+xt\build\chunks\[root-of-the-server
+]__0d-m0h0._.js:146:36][0m
+
+> Build error occurred
+Error: Turbopack build failed with 
+1 errors:
+./src/app/globals.css
+Error evaluating Node.js code
+CssSyntaxError: tailwindcss: C:\Use
+rs\Admin\Documents\Work\Personal\Ci
+ki\site\src\app\globals.css:1:1: 
+`@utility` cannot be nested.
+    at Input.error (node_modules/po
+stcss/lib/input.js:135:16) [C:\User
+s\Admin\Documents\Work\Personal\Cik
+i\site\.next\build\chunks\node_modu
+les_13sb.px._.js:4651:22]
+    at error (node_modules/postcss/
+lib/node.js:146:32) [C:\Users\Admin
+\Documents\Work\Personal\Ciki\site\
+.next\build\chunks\node_modules_13s
+b.px._.js:928:38]
+    [at Object.Once (C:\Users\Admin
+\Documents\Work\Personal\Ciki\site\
+node_modules\@tailwindcss\postcss\d
+ist\index.js:10:6913)]
+    at async LazyResult.runAsync (n
+ode_modules/postcss/lib/lazy-result
+.js:293:11) [C:\Users\Admin\Documen
+ts\Work\Personal\Ciki\site\.next\bu
+ild\chunks\node_modules_13sb.px._.j
+s:6214:21]
+    at async transform (turbopack:/
+//[turbopack-node]/transforms/postc
+ss.ts:70:34) [C:\Users\Admin\Docume
+nts\Work\Personal\Ciki\site\.next\b
+uild\chunks\[root-of-the-server]__0
+d-m0h0._.js:146:36]
+    at async run (turbopack:///[tur
+bopack-node]/child_process/evaluate
+.ts:89:23) [C:\Users\Admin\Document
+s\Work\Personal\Ciki\site\.next\bui
+ld\chunks\[root-of-the-server]__0ub
+btyl._.js:443:31]
+
+Import trace:
+  Client Component Browser:
+    ./src/app/globals.css [Client 
+Component Browser]
+    ./src/app/layout.tsx [Server 
+Component]
+
+
+    at async transform (turbopack:/
+//[turbopack-node]/transforms/postc
+ss.ts:70:34) [C:\Users\Admin\Docume
+nts\Work\Personal\Ciki\site\.next\b
+uild\chunks\[root-of-the-server]__0
+d-m0h0._.js:146:36])
+    at async run (turbopack:///[tur
+bopack-node]/child_process/evaluate
+.ts:89:23) [C:\Users\Admin\Document
+s\Work\Personal\Ciki\site\.next\bui
+ld\chunks\[root-of-the-server]__0ub
+btyl._.js:443:31])
